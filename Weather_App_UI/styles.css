@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+}
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #1c2143;
+}
+::selection {
+  color: #fff;
+  background: #1c2143;
+}
+.container {
+  width: 400px;
+  background: #f5fbf9;
+  border-radius: 7px;
+  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+}
+.container header {
+  display: flex;
+  font-size: 21px;
+  font-weight: 500;
+  color: #1c2143;
+  background: #f3cd74;
+  padding: 16px 15px;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+header i {
+  font-size: 0em;
+  cursor: pointer;
+  margin-right: 8px;
+}
+.container.active header {
+  background: #f5fbf9;
+}
+.container.active header i {
+  margin-left: 5px;
+  font-size: 30px;
+}
+.container .input-section {
+  margin: 20px 25px 30px;
+}
+.container.active .input-section {
+  display: none;
+}
+.input-section .info-txt {
+  display: none;
+  font-size: 17px;
+  text-align: center;
+  padding: 12px 10px;
+  border-radius: 7px;
+  margin-bottom: 15px;
+}
+.input-section .info-txt.error {
+  color: #721c24;
+  display: block;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+.input-section .info-txt.pending {
+  color: #2d4966;
+  display: block;
+  background: #a4c2d8dd;
+  border: 1px solid #a2c4e0;
+}
+.input-section :where(input, button) {
+  width: 100%;
+  height: 55px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  border-radius: 7px;
+}
+.input-section input {
+  text-align: center;
+  padding: 0 15px;
+  border: 1px solid #ccc;
+}
+.input-section input:is(:focus, :valid) {
+  border: 2px solid #2f5972;
+}
+.input-section input::placeholder {
+  color: #bfbfbf;
+}
+.input-section .separator {
+  width: 100%;
+  margin: 17px 0;
+  background: #f5fbf9;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.separator::before {
+  content: "or";
+  color: #b3b3b3;
+  font-size: 19px;
+  padding: 0 10px;
+  background: #f5fbf9;
+}
+.input-section button {
+  color: #554d88;
+  cursor: pointer;
+  background: #a6b6f8;
+  transition: 0.3s ease;
+}
+.input-section button:hover {
+  background: #7488d7;
+  color: #fff;
+}
+
+.container .weather-section {
+  display: none;
+  margin: 30px 0 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.container.active .weather-section {
+  display: flex;
+}
+.weather-section img {
+  max-width: 125px;
+}
+.weather-section .temp {
+  display: flex;
+  font-weight: 500;
+  font-size: 72px;
+}
+.weather-section .temp .numb {
+  font-weight: 600;
+}
+.weather-section .temp .deg {
+  font-size: 40px;
+  display: block;
+  margin: 10px 5px 0 0;
+}
+.weather-section .weather {
+  font-size: 21px;
+  text-align: center;
+  margin: -5px 20px 15px;
+}
+.weather-section .location {
+  display: flex;
+  font-size: 19px;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  align-items: flex-start;
+}
+.location i {
+  font-size: 22px;
+  margin: 4px 5px 0 0;
+}
+.weather-section .bottom-details {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+}
+.bottom-details .column {
+  display: flex;
+  width: 100%;
+  padding: 15px 0;
+  align-items: center;
+  justify-content: center;
+}
+.column i {
+  color: #2c7ef4;
+  font-size: 40px;
+}
+.column.humidity {
+  border-left: 1px solid #ccc;
+}
+.column.wind {
+  border-left: 1px solid #ccc;
+}
+.column .details {
+  margin-left: 3px;
+}
+.details .temp,
+.humidity,
+.wind span {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: -3px;
+}
+.details .temp .deg {
+  margin: 0;
+  font-size: 17px;
+  padding: 0 2px 0 1px;
+}
+.column .details p {
+  font-size: 12px;
+  margin-top: -6px;
+}
+.humidity i {
+  font-size: 37px;
+}
+.wind i {
+  font-size: 37px;
+}
